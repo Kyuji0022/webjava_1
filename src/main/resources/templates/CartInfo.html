@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CartInfo</title>
+</head>
+<body>
+
+	 <form method="post" action="ListView">
+				<table border="1">
+				<tr>
+					<th>商品ID</th>
+					<th>商品名</th>
+					<th>値段</th>
+					<th>個数</th>
+				</tr>
+
+				<tr th : each="order: ${order}">
+					<td th:text="${order.itemId}"></td>
+					<td th:text="${order.name}"></td>
+					<td th:text="${order.price}"></td>
+					<td th:text="${order.num}" ></td>
+				</tr>
+			</table>
+
+			<p>戻る</p>
+			<input type="submit" value="戻る">
+
+		</form>
+</body>
+</html>

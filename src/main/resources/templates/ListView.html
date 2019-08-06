@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ListView</title>
+</head>
+<body>
+    <form method="POST"action="CartInfo" th:object="${order}">
+        ショッピングカート機能<br>
+
+		<table>
+			<tr>
+				<th>商品ID</th>
+				<th>商品名</th>
+				<th>値段</th>
+				<th>個数</th>
+			</tr>
+			<tr th:each="itemlist : ${itemlist}">
+				<td th:text="${itemlist.itemId}"></td>
+				<td th:text="${itemlist.name}"></td>
+				<td th:text="${itemlist.price}"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="num" min="0" value="0"></input></td>
+				<td><input type="submit" value="カートに保存"></input></td>
+			</tr>
+		</table>
+    </form>
+</body>
+</html>
